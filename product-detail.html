@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - SALTY</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="products.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <nav class="navbar">
+            <div class="topnav">
+                <ul class="social-container">
+                    <li><a href="https://www.facebook.com/" class="social-link"><ion-icon
+                                name="logo-facebook"></ion-icon></a></li>
+                    <li><a href="https://x.com/" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                    <li><a href="https://www.instagram.com/" class="social-link"><ion-icon
+                                name="logo-instagram"></ion-icon></a></li>
+                </ul>
+                <ul class="account-container">
+                    <li><a href="#" class="login-link">Login | Register</a></li>
+                    <li><a href="account-test.html" class="account-link"><ion-icon name="person-circle-outline"
+                                class="login-icon"></ion-icon></a></li>
+                </ul>
+            </div>
+            <div class="midnav">
+                <div class="logo-img">
+                    <a href="index.html" class="page-link">
+                        <img src="image/logo.gif" alt="SALTY Logo">
+                    </a>
+                </div>
+                <form class="container-input" action="product-search.html" method="GET">
+                    <input type="text" placeholder="Search..." name="q" class="input-search" required>
+                    <button type="submit" class="search-button" aria-label="Search">
+                        <svg fill="#000000" width="20px" height="20px" viewBox="0 0 1920 1920"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M790.588 1468.235c-373.722 0-677.647-303.924-677.647-677.647 0-373.722 303.925-677.647 677.647-677.647 373.723 0 677.647 303.925 677.647 677.647 0 373.723-303.924 677.647-677.647 677.647Zm596.781-160.715c120.396-138.692 193.807-319.285 193.807-516.932C1581.176 354.748 1226.428 0 790.588 0S0 354.748 0 790.588s354.748 790.588 790.588 790.588c197.647 0 378.24-73.411 516.932-193.807l516.028 516.142 79.963-79.963-516.142-516.028Z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </form>
+                <div class="cart-icon-wrapper">
+                    <a href="cart.html" class="account-link">
+                        <ion-icon name="cart-outline" class="cart-icon" id="cart-icon"></ion-icon></a>
+                    <span id="cart-item-count">0</span>
+                </div>
+            </div>
+            <div class="bottnav">
+            </div>
+        </nav>
+        <div class="main">
+            <div class="navigation-header">
+                <button class="back-btn" id="backBtn"> 
+                    <ion-icon name="arrow-back-outline"></ion-icon> Back
+                </button>
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="separator">/</span>
+                    <a href="#" id="breadcrumb-category">Category</a>
+                    <span class="separator">/</span>
+                    <span class="current" id="breadcrumb-product">Product Name</span>
+                </nav>
+            </div>
+            <section class="product-detail-container">
+                <div class="product-detail-layout">
+
+                    <div class="product-image-container">
+                        <img id="product-image" src="https://via.placeholder.com/600x600.png?text=Loading..."
+                            alt="Product image">
+                    </div>
+
+                    <section class="product-detail-container" id="product-detail-container">
+                        <h1 id="product-name">Loading...</h1>
+                        <div class="product-rating" id="product-rating">⭐️⭐️⭐️⭐️☆ (0)</div>
+                        <div class="product-price" id="product-price">฿0</div>
+
+                        <div class="product-description">
+                            <h2>Product Description</h2>
+                            <p id="product-desc">
+                                This is a sample product description...
+                            </p>
+                        </div>
+
+                        <button id="add-to-cart-btn" class="cta-button">
+                            <ion-icon name="cart-outline"></ion-icon> Add to Cart
+                        </button>
+                    </section>
+
+                </div>
+            </section>
+
+        <section class="related-products-container all-items-container">
+            <h2>Related</h2>
+            <div class="all-items-grid" id="related-products-grid">
+            </div>
+        </section>
+
+        <button id="backToTopBtn" title="กลับไปด้านบน">↑</button>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 SALTY. All rights reserved.</p>
+    </div>
+
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

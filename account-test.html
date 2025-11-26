@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - SALTY</title>
+    <link rel="stylesheet" href="styles2.css">
+    <script src="products.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Navbar (Consistent with other pages) -->
+        <nav class="navbar">
+            <div class="topnav">
+                <ul class="social-container">
+                    <li><a href="https://www.facebook.com/" class="social-link"><ion-icon
+                                name="logo-facebook"></ion-icon></a></li>
+                    <li><a href="https://x.com/" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                    <li><a href="https://www.instagram.com/" class="social-link"><ion-icon
+                                name="logo-instagram"></ion-icon></a></li>
+                </ul>
+                <ul class="account-container">
+                    <li><a href="#" class="login-link">Login | Register</a></li>
+                    <li><a href="account-test.html" class="account-link"><ion-icon name="person-circle-outline"
+                                class="login-icon"></ion-icon></a></li>
+                </ul>
+            </div>
+            <div class="midnav">
+                <div class="logo-img">
+                    <a href="index.html" class="page-link">
+                        <img src="image/logo.gif" alt="SALTY Logo">
+                    </a>
+                </div>
+                <form class="container-input" action="product-search.html" method="GET">
+                    <input type="text" placeholder="Search..." name="q" class="input-search" required>
+                    <button type="submit" class="search-button" aria-label="Search">
+                        <svg fill="#000000" width="20px" height="20px" viewBox="0 0 1920 1920"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M790.588 1468.235c-373.722 0-677.647-303.924-677.647-677.647 0-373.722 303.925-677.647 677.647-677.647 373.723 0 677.647 303.925 677.647 677.647 0 373.723-303.924 677.647-677.647 677.647Zm596.781-160.715c120.396-138.692 193.807-319.285 193.807-516.932C1581.176 354.748 1226.428 0 790.588 0S0 354.748 0 790.588s354.748 790.588 790.588 790.588c197.647 0 378.24-73.411 516.932-193.807l516.028 516.142 79.963-79.963-516.142-516.028Z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </form>
+                <div class="cart-icon-wrapper">
+                    <a href="cart.html" class="account-link">
+                        <ion-icon name="cart-outline" class="cart-icon" id="cart-icon"></ion-icon></a>
+                    <span id="cart-item-count">0</span>
+                </div>
+            </div>
+            <div class="bottnav">
+            </div>
+        </nav>
+
+        <div class="main">
+            <!-- Breadcrumb Navigation -->
+            <div class="navigation-header">
+                <button class="back-btn" id="backBtn"> 
+                    <ion-icon name="arrow-back-outline"></ion-icon> Back
+                </button>
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="separator">/</span>
+                    <span class="current">My Account</span>
+                </nav>
+            </div>
+
+            <section class="account-layout">
+
+                <!-- Sidebar Menu -->
+                <aside class="account-sidebar">
+                    <div class="user-summary">
+                        <ion-icon name="person-circle-outline" class="user-avatar"></ion-icon>
+                        <h3>Guest User</h3>
+                        <p style="color: #666; font-size: 0.9rem;">member@example.com</p>
+                    </div>
+                    <ul class="sidebar-menu">
+                        <li><a onclick="switchTab('profile')" id="nav-profile" class="active"><ion-icon
+                                    name="person-outline"></ion-icon> My Profile</a></li>
+                        <li><a onclick="switchTab('orders')" id="nav-orders"><ion-icon
+                                    name="bag-handle-outline"></ion-icon> Order History</a></li>
+                        <li><a onclick="switchTab('address')" id="nav-address"><ion-icon
+                                    name="location-outline"></ion-icon> Address Book</a></li>
+                        <li><a href="index.html" style="color: #ff4d4d;"><ion-icon name="log-out-outline"></ion-icon>
+                                Logout</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Main Content Area -->
+                <div class="account-content">
+
+                    <!-- Tab 1: Profile -->
+                    <div id="tab-profile" class="tab-content active">
+                        <h2 class="section-header">Edit Profile</h2>
+                        <form class="shipping-form" style="box-shadow: none; padding: 0;">
+                            <label for="acc-name">Full Name:</label>
+                            <input type="text" id="acc-name" value="Guest User">
+
+                            <label for="acc-email">Email Address:</label>
+                            <input type="email" id="acc-email" value="member@example.com">
+
+                            <label for="acc-phone">Phone Number:</label>
+                            <input type="tel" id="acc-phone" placeholder="08X-XXX-XXXX">
+
+                            <div style="margin-top: 20px;">
+                                <label for="acc-pass">New Password (leave blank to keep current):</label>
+                                <input type="password" id="acc-pass"
+                                    style="width: 100%; padding: 0.8em; border: 1px solid #ccc; border-radius: 6px;">
+                            </div>
+
+                            <button type="button" class="cta-button" style="margin-top: 20px;">Save Changes</button>
+                        </form>
+                    </div>
+
+                    <!-- Tab 2: Order History -->
+                    <div id="tab-orders" class="tab-content">
+                        <h2 class="section-header">Recent Orders</h2>
+                        <table class="order-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Total</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#ORD-250101</td>
+                                    <td>21 Jan 2025</td>
+                                    <td><span class="status-badge status-processing">Processing</span></td>
+                                    <td>฿15,900</td>
+                                    <td><a href="#" style="color: var(--primary-color);">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-241225</td>
+                                    <td>25 Dec 2024</td>
+                                    <td><span class="status-badge status-delivered">Delivered</span></td>
+                                    <td>฿3,590</td>
+                                    <td><a href="#" style="color: var(--primary-color);">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-241111</td>
+                                    <td>11 Nov 2024</td>
+                                    <td><span class="status-badge status-shipped">Shipped</span></td>
+                                    <td>฿2,260</td>
+                                    <td><a href="#" style="color: var(--primary-color);">View</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Tab 3: Address -->
+                    <div id="tab-address" class="tab-content">
+                        <h2 class="section-header">My Address</h2>
+                        <div class="card" style="border: 1px solid #eee; padding: 0;">
+                            <div class="card-content">
+                                <h3>Default Shipping Address</h3>
+                                <p style="color: #666; margin-top: 10px; line-height: 1.6;">
+                                    Guest User<br>
+                                    123 Silom Road, Bang Rak<br>
+                                    Bangkok, Thailand 10500<br>
+                                    Tel: 081-234-5678
+                                </p>
+                                <button class="cta-button"
+                                    style="margin-top: 15px; font-size: 0.9rem; padding: 8px 16px;">Edit
+                                    Address</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <button id="backToTopBtn" title="Back to Top">↑</button>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 SALTY. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- Ionicons Scripts -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+
+    <!-- Simple Tab Switcher Script -->
+    <script>
+        function switchTab(tabName) {
+            // 1. Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // 2. Remove active class from all menu items
+            const links = document.querySelectorAll('.sidebar-menu a');
+            links.forEach(link => link.classList.remove('active'));
+
+            // 3. Show the selected tab
+            document.getElementById('tab-' + tabName).classList.add('active');
+
+            // 4. Highlight the selected menu item
+            document.getElementById('nav-' + tabName).classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
