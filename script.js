@@ -374,7 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = '';
     let total = 0;
     if (cart.length === 0) {
-      container.innerHTML = '<p style="padding: 20px; text-align: center;">ตะกร้าของคุณว่างเปล่า</p>';
+      container.innerHTML = '<p style="padding: 20px; text-align: center;">Your cart is empty.</p>';
       totalPriceEl.textContent = '฿0';
       return;
     }
