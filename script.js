@@ -276,9 +276,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const relatedProducts = ALL_PRODUCTS.filter(p => {
       if (p.id == product.id) return false;
-      const currentProductCategories = Array.isArray(product.category) ? product.category : [product.category];
+      const mainCategory = Array.isArray(product.category) ? product.category[0] : product.category;
       const otherProductCategories = Array.isArray(p.category) ? p.category : [p.category];
-      return currentProductCategories.some(cat => otherProductCategories.includes(cat));
+      return otherProductCategories.includes(mainCategory);
     });
     relatedGrid.innerHTML = '';
     if (relatedProducts.length > 0) {
@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
         relatedGrid.appendChild(linkWrapper);
       });
     } else {
-      relatedGrid.innerHTML = "<p>ไม่มีสินค้าที่เกี่ยวข้อง</p>";
+      relatedGrid.innerHTML = "<p>No related products found.</p>";
     }
 
     if (addToCartBtn) {
