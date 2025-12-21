@@ -12,7 +12,7 @@
 <body>
     <div class="container">
 
-        <!-- Navbar (Consistent with other pages) -->
+        
         <nav class="navbar">
             <div class="topnav">
                 <ul class="social-container">
@@ -54,7 +54,7 @@
         </nav>
 
         <div class="main">
-            <!-- Breadcrumb Navigation -->
+            
             <div class="navigation-header">
                 <button class="back-btn" id="backBtn"> 
                     <ion-icon name="arrow-back-outline"></ion-icon> Back
@@ -68,7 +68,7 @@
 
             <section class="account-layout">
 
-                <!-- Sidebar Menu -->
+               
                 <aside class="account-sidebar">
                     <div class="user-summary">
                         <ion-icon name="person-circle-outline" class="user-avatar"></ion-icon>
@@ -87,10 +87,10 @@
                     </ul>
                 </aside>
 
-                <!-- Main Content Area -->
+                
                 <div class="account-content">
 
-                    <!-- Tab 1: Profile -->
+                  
                     <div id="tab-profile" class="tab-content active">
                         <h2 class="section-header">Edit Profile</h2>
                         <form class="shipping-form" style="box-shadow: none; padding: 0;">
@@ -113,7 +113,7 @@
                         </form>
                     </div>
 
-                    <!-- Tab 2: Order History -->
+                  
                     <div id="tab-orders" class="tab-content">
                         <h2 class="section-header">Recent Orders</h2>
                         <table class="order-table">
@@ -152,7 +152,7 @@
                         </table>
                     </div>
 
-                    <!-- Tab 3: Address -->
+                    
                     <div id="tab-address" class="tab-content">
                         <h2 class="section-header">My Address</h2>
                         <div class="card" style="border: 1px solid #eee; padding: 0;">
@@ -182,28 +182,28 @@
         </div>
     </div>
 
-    <!-- Ionicons Scripts -->
+    
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    <!-- Main Script -->
+    
     <script src="script.js"></script>
 
-    <!-- Simple Tab Switcher Script -->
+    
     <script>
         function switchTab(tabName) {
-            // 1. Hide all tab contents
+            
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
 
-            // 2. Remove active class from all menu items
+            
             const links = document.querySelectorAll('.sidebar-menu a');
             links.forEach(link => link.classList.remove('active'));
 
-            // 3. Show the selected tab
+            
             document.getElementById('tab-' + tabName).classList.add('active');
 
-            // 4. Highlight the selected menu item
+            
             document.getElementById('nav-' + tabName).classList.add('active');
         }
     </script>
